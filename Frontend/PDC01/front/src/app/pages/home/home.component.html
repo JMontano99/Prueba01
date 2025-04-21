@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>{{ "home.title" | translate }}</h1>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <button mat-raised-button color="primary" [routerLink]="['/colors']">
+        [DEMO] {{ "colors.title" | translate }}
+      </button>
+    </div>
+    <div class="col-md-12 text-center mt-3">
+      <button mat-raised-button color="accent" [routerLink]="['/events']">
+        [DEMO] SSE
+      </button>
+    </div>
+    <div class="col-md-12 text-center mt-3">
+      <button mat-raised-button color="secondary" [routerLink]="['/users']">
+        [DEMO] {{ "users.title" | translate }}
+      </button>
+    </div>
+    <div class="col-md-12 text-center mt-3">
+      <button mat-raised-button color="primary" [routerLink]="['/dashboard']">
+        [DEMO] {{ "dashboard.title" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

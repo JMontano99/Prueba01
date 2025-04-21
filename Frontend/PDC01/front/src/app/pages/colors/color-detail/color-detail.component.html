@@ -1,0 +1,18 @@
+<div class="container mt">
+  <div class="row" *ngIf="color">
+    <div class="col-md-8">
+      <div>ID: {{ color.id }}</div>
+      <div>{{ "colors.columns.name" | translate }}: {{ color.name }}</div>
+      <div>{{ "colors.columns.year" | translate }}: {{ color.year }}</div>
+      <div>{{ "colors.columns.color" | translate }}: {{ color.color }}</div>
+      <div>
+        {{ "colors.columns.pantone" | translate }}:
+        {{ color.pantone_value }}
+      </div>
+    </div>
+    <div
+      class="col-md-4 color-sample"
+      [ngStyle]="{ 'background-color': color.color }"
+    ></div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container login-container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-4">
+      <mat-card class="card-login">
+        <mat-card-header>
+          <span class="logo"></span>
+        </mat-card-header>
+        <mat-card-content [formGroup]="formLogin">
+          <mat-form-field class="login-field">
+            <input
+              matInput
+              placeholder="{{ 'login.username.title' | translate }}"
+              name="username"
+              formControlName="username"
+              required
+            />
+            <mat-error>
+              <span
+                *ngIf="formLogin?.controls?.['username']?.errors?.['required']"
+              >
+                {{ "login.username.errors.required" | translate }}
+              </span>
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="login-field">
+            <input
+              matInput
+              placeholder="{{ 'login.password.title' | translate }}"
+              name="password"
+              formControlName="password"
+              type="password"
+              required
+            />
+            <mat-error>
+              <span
+                *ngIf="formLogin?.controls?.['password']?.errors?.['required']"
+                >{{ "login.password.errors.required" | translate }}</span
+              >
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-button
+            color="primary"
+            [disabled]="formLogin.invalid"
+            (click)="login()"
+          >
+            {{ "login.login-button" | translate }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-4">
+      <app-chart
+        [chart]="sales.chart"
+        [series]="sales.series"
+        [attributes]="sales.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+      <app-chart
+        [chart]="expenses.chart"
+        [series]="expenses.series"
+        [attributes]="expenses.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+      <app-chart
+        [chart]="profits.chart"
+        [series]="profits.series"
+        [attributes]="profits.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <app-chart
+        [chart]="monthSales.chart"
+        [series]="monthSales.series"
+        [attributes]="monthSales.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <app-chart
+        [chart]="dailySales.chart"
+        [series]="dailySales.series"
+        [attributes]="dailySales.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <app-chart
+        [chart]="departmentSales.chart"
+        [series]="departmentSales.series"
+        [attributes]="departmentSales.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <app-chart
+        [chart]="customers.chart"
+        [series]="customers.series"
+        [attributes]="customers.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+      <app-chart
+        [chart]="performance.chart"
+        [series]="performance.series"
+        [attributes]="performance.attributes"
+      ></app-chart>
+    </div>
+    <div class="col-12 col-md-8 col-lg-8">
+      <app-chart
+        [chart]="timeline.chart"
+        [series]="timeline.series"
+        [attributes]="timeline.attributes"
+      ></app-chart>
+    </div>
+  </div>
+</div>

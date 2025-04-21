@@ -1,0 +1,38 @@
+.login-container {
+  height: 100%;
+
+  .row {
+    min-height: 100%;
+  }
+
+  mat-card {
+    mat-card-title {
+      text-align: center;
+    }
+
+    mat-card-content {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    mat-checkbox {
+      margin-top: 12px;
+    }
+  }
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
+}
+
+.logo {
+  height: 48px;
+  width: 100%;
+}

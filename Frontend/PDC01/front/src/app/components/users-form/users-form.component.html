@@ -1,0 +1,56 @@
+<form class="d-flex flex-column gap-10" [formGroup]="formGroup">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" formControlName="name" />
+    <mat-error *ngIf="formGroup.get('name')?.hasError('required')">
+      Campo requerido
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('name')?.hasError('minlength')">
+      Mínimo 4 caracteres
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('name')?.hasError('maxlength')">
+      Máximo 30 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Edad</mat-label>
+    <input matInput type="number" formControlName="age" />
+    <mat-error *ngIf="formGroup.get('age')?.hasError('required')">
+      Campo requerido
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('age')?.hasError('min')">
+      Mínimo 18 años
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('age')?.hasError('max')">
+      Máximo 110 años
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Teléfono</mat-label>
+    <input matInput type="tel" formControlName="phone" />
+    <mat-error *ngIf="formGroup.get('phone')?.hasError('required')">
+      Campo requerido
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('phone')?.hasError('minlength')">
+      Mínimo 10 caracteres
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('phone')?.hasError('max')">
+      Máximo 10 caracteres
+    </mat-error>
+    <mat-error *ngIf="formGroup.get('phone')?.hasError('pattern')">
+      Formato inválido
+    </mat-error>
+  </mat-form-field>
+  <div class="d-flex justify-content-end">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="formGroup.invalid || !formGroup.dirty"
+      (click)="onSubmit()"
+    >
+      Guardar
+    </button>
+  </div>
+</form>

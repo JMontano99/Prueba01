@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Server sent events</mat-card-title>
+        </mat-card-header>
+        <mat-card-content [formGroup]="formEvents" *ngIf="formEvents">
+          <mat-form-field class="material-field">
+            <input
+              matInput
+              placeholder="ID User"
+              name="id"
+              formControlName="id"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="material-field">
+            <input
+              matInput
+              placeholder="Channel"
+              name="channel"
+              formControlName="channel"
+              required
+            />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="formEvents?.invalid || listening"
+            (click)="listen()"
+          >
+            Start listening
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            [disabled]="formEvents?.invalid || !listening"
+            (click)="stop()"
+          >
+            Stop listening
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-12" style="white-space: pre-line">
+      {{ results }}
+    </div>
+  </div>
+</div>

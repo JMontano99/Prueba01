@@ -1,0 +1,181 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// default-theme
+
+$default-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+$default-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+$default-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$default-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $default-primary,
+      accent: $default-accent,
+      warn: $default-warn,
+    ),
+  )
+);
+
+@mixin custom-elements($default-theme) {
+  .logo {
+    background-image: url("../assets/img/axity-purple.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@include mat.all-component-themes($default-theme);
+@include custom-elements($default-theme);
+
+// dark-theme
+
+.dark-theme {
+  // Define the palettes for your theme using the Material Design palettes available in palette.scss
+  // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+  // hue. Available color palettes: https://material.io/design/color/
+  $dark-primary: mat.m2-define-palette(mat.$m2-blue-grey-palette);
+  $dark-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
+
+  // The warn palette is optional (defaults to red).
+  $dark-warn: mat.m2-define-palette(mat.$m2-deep-orange-palette);
+
+  // Create the theme object. A theme consists of configurations for individual
+  // theming systems such as "color" or "typography".
+  $dark-theme: mat.m2-define-dark-theme(
+    (
+      color: (
+        primary: $dark-primary,
+        accent: $dark-accent,
+        warn: $dark-warn,
+      ),
+    )
+  );
+
+  @mixin custom-elements($dark-theme) {
+    $primary: map-get($dark-theme, primary);
+    $accent: map-get($dark-theme, accent);
+
+    body {
+      background-color: #333333;
+      color: white;
+    }
+
+    .logo {
+      background-image: url("../assets/img/axity-white.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  // Include theme styles for core and each component used in your app.
+  // Alternatively, you can import and @include the theme mixins for each component
+  // that you are using.
+  @include mat.all-component-colors($dark-theme);
+  @include custom-elements($dark-theme);
+}
+
+// axity-theme
+
+.axity-theme {
+  $axity-primary-palette: (
+    50: #a7a1aa,
+    100: #c8b7d1,
+    200: #a487b3,
+    300: #7f5695,
+    400: #63327e,
+    500: #480e67,
+    600: #410c5f,
+    700: #380a54,
+    800: #30084a,
+    900: #210439,
+    A100: #b56fff,
+    A200: #9b3cff,
+    A400: #8109ff,
+    A700: #7500ef,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #ffffff,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #ffffff,
+      A400: #ffffff,
+      A700: #ffffff,
+    ),
+  );
+
+  $axity-accent-palette: (
+    50: #fee7e9,
+    100: #fdc2c8,
+    200: #fc9aa4,
+    300: #fb7280,
+    400: #fa5364,
+    500: #f93549,
+    600: #f83042,
+    700: #f72839,
+    800: #f62231,
+    900: #f51621,
+    A100: #ffffff,
+    A200: #fff1f2,
+    A400: #ffbec1,
+    A700: #ffa5a8,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000,
+    ),
+  );
+
+  $axity-primary: mat.m2-define-palette($axity-primary-palette);
+  $axity-accent: mat.m2-define-palette($axity-accent-palette);
+  $axity-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+  $axity-theme: mat.m2-define-light-theme(
+    (
+      color: (
+        primary: $axity-primary,
+        accent: $axity-accent,
+        warn: $axity-warn,
+      ),
+    )
+  );
+
+  @mixin custom-elements($axity-theme) {
+    .logo {
+      background-image: url("../assets/img/axity-purple.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include mat.all-component-colors($axity-theme);
+  @include custom-elements($axity-theme);
+}
