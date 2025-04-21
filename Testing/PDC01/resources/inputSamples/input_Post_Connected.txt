@@ -1,0 +1,39 @@
+{
+    "TestGroups": [
+        {
+            "ThreadGroup": 
+            {
+                "Loop": 5,
+                "Thread": 1,
+                "Ramp": 1
+            },
+            "Requests": 
+            [
+                {
+                    "Body":"[Build]",
+                    "Host": "localhost", 
+                    "Port": 3000,
+                    "Protocol": "http",
+                    "Path":"/recievefile",
+                    "Method":"POST",
+                    "Content":"Content-Type",
+                    "Accept":"Accept",
+                    "ApplicationJson": "application/json",
+                    "UseCsv":true                    
+                },
+                {
+                    "Body":"[UsePrev]",
+                    "Host": "localhost",
+                    "Port": 3000,
+                    "Protocol": "http",
+                    "Path":"/recievefile",
+                    "Method":"POST",
+                    "Content":"Content-Type",
+                    "Accept":"Accept",
+                    "ApplicationJson": "application/json",
+                    "UseCsv":false                    
+                }
+            ]
+        }        
+    ]
+}

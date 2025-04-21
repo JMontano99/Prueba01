@@ -1,0 +1,23 @@
+{
+    "TestGroups": [
+        {
+            "ThreadGroup": 
+            {
+                "Loop": 5,
+                "Thread": 1,
+                "Ramp": 1
+            },
+            "Requests": 
+            [
+                {                    
+                    "Host": "localhost", 
+                    "Port": 3000,
+                    "Protocol": "http",
+                    "Path":"/user?id=${Name}",
+                    "Method":"GET",
+                    "UseCsv":true
+                }
+            ]
+        }        
+    ]
+}
